@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sale History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="listItems?.length"  >
+    <ion-item lines="full" *ngFor="let item of listItems"
+    [routerLink]="['./',item.id]"
+    >
+ 
+    <ion-label>
+      <ion-text> 
+        {{item.name}} :
+      </ion-text>
+       <ion-text color="primary">
+        {{item.price}}
+       </ion-text>
+    </ion-label>
+ 
+    
+  <ion-label slot="end">
+    {{item.amount}}
+</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

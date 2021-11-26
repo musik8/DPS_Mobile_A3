@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-buttons>
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+
+    <ion-title>History Detail</ion-title>
+ 
+  
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full" *ngIf="historyItem">
+    <h1>Name: {{historyItem.name}}</h1>
+  </ion-item>
+  <ion-item lines="full" *ngIf="historyItem">
+    <h1>Amount: {{historyItem.amount}}</h1>
+  </ion-item>
+  <ion-item lines="full" *ngIf="historyItem">
+    <h1>Price: {{historyItem.price}}</h1>
+  </ion-item>
+  <ion-item lines="full" *ngIf="historyItem">
+    <h1>Date: {{historyItem.date}}</h1>
+  </ion-item>
+  
+ 
+</ion-content>

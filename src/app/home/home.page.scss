@@ -25,3 +25,19 @@
 #container a {
   text-decoration: none;
 }
+.buyCol {
+  //border: 1px solid #000;
+  align-self: end;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.buyButton {
+  //align-self: stretch;
+  justify-content: center;
+  align-self: end;
+}
+.amount {
+  padding-bottom: 100px;
+  align-items: center;
+  justify-content: center;
+}

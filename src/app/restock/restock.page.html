@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>restock</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button  (click)="onSubmitForm()" >
+        <ion-icon name="add-circle-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <form [formGroup]="form">
+    
+     
+        <ion-item lines="full" class="restock">
+            <ion-label position="floating">{{(currItem == undefined)  ? 'Select Item To Restock' : currItem.name}}</ion-label>
+            <ion-input  type="number"
+            formControlName="amount"
+             ></ion-input>
+        </ion-item>
+     
+    
+   
+  
+    
+  </form>
+
+
+
+  <ion-list >
+    <ion-item lines="full" *ngFor="let item of listItems"
+      (click)="setCurrent(item.id)"
+    >
+ 
+    <ion-label>
+      <ion-text> 
+        {{item.name}} :
+      </ion-text>
+       <ion-text color="primary">
+        {{item.price}}
+       </ion-text>
+    </ion-label>
+ 
+    
+  <ion-label slot="end">
+    {{item.stock}}
+</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

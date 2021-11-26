@@ -1,20 +1,176 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Cash Register
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item lines="full">
+    Amount:  {{buyAmount}}
+    </ion-item>
+
+
+  <ion-grid>
+   
+
+  <ion-row>
+
+  
+  <ion-col size="8">
+    <ion-row>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(1)"
+        >1</ion-button>
+      </ion-col>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(2)"
+        >2</ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(3)"
+        >3</ion-button>
+      </ion-col>
+    
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(4)"
+        >4</ion-button>
+      </ion-col>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(5)"
+        >5</ion-button>
+      </ion-col>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(6)"
+        >6</ion-button>
+      </ion-col>
+    
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(7)"
+        >7</ion-button>
+      </ion-col>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(8)"
+        >8</ion-button>
+      </ion-col>
+      <ion-col size="4" >
+        <ion-button 
+        expand="block"
+          color="primary"
+          shape="round"
+          (click)="addTotal(9)"
+        >9</ion-button>
+      </ion-col>
+    
+    </ion-row>
+  <ion-row>
+    <ion-col size="4" >
+      <ion-button 
+      expand="block"
+        color="primary"
+        shape="round"
+        (click)="addTotal(0)"
+      >0</ion-button>
+    </ion-col>
+   
+  
+  </ion-row>
+</ion-col>
+
+<ion-col class="buyCol">
+
+  <ion-row class="amount">
+    {{totalAmount}}
+  </ion-row>
+
+
+  <ion-row class="buyButton">
+    <ion-button 
+    expand="block"
+      color="success"
+      shape="round"
+      (click)="purchaseItem()"
+    >Buy</ion-button>
+  </ion-row>
+
+
+</ion-col>
+
+</ion-row>
+
+  
+
+
+  </ion-grid>
+  <ion-item lines="full">
+    <h2>{{(activeItem == undefined)  ? 'Select Item To Purchase' : activeItem.name}}</h2>
+ 
+  </ion-item>
+  <ion-list >
+    <ion-item lines="full" *ngFor="let item of listItems"
+    (click)="setCurrentItem(item.id)">
+ 
+      <ion-label>
+        <ion-text> 
+          {{item.name}} :
+        </ion-text>
+         <ion-text color="primary">
+          {{item.price}}
+         </ion-text>
+      </ion-label>
+   
+      
+    <ion-label slot="end">
+      {{item.stock}}
+  </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+  
+
+
 </ion-content>
+
+
